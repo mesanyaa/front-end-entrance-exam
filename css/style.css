@@ -6,6 +6,7 @@
   --dark-green-color: rgba(126, 115, 18, 0.4);
   --hashtag-green-color: #149063;
   --yellow-color: #f6ed1e;
+  --ripple-color: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -36,7 +37,7 @@
 
 html {
   font-family: "Poppins";
-  font-weight: regular;
+  font-weight: 400;
 }
 
 .wrapper {
@@ -46,7 +47,7 @@ html {
 #download-btn {
   position: fixed;
   top: 50px;
-  left: 200px;
+  left: calc(100vw - 95%);
   background: #000;
   color: #fff;
   border: none;

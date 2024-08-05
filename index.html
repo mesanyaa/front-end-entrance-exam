@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Resume Creator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="module" src="./js/main.js" defer></script>
+    <script type="module" src="./js/wave.js" defer></script>
   </head>
   <body>
     <div id="app" class="wrapper">
       <div class="container" id="resume">
         <div class="header-section">
           <div class="header__left-side">
-            <div class="header__item">
+            <div class="header__item ripple-surface">
               <img
                 class="photo"
                 src="./public/profileImg.png"
                 alt="profile_image"
               />
             </div>
-            <div class="occupation header__item">
+            <div class="occupation header__item ripple-surface">
               <p class="gretting">Hello 👋🏻 I’m</p>
               <div class="editable-occupation">
                 <p contenteditable="true" class="editable-occupation__name">
@@ -34,19 +38,19 @@
               </div>
             </div>
           </div>
-          <div class="languages header__item">
+          <div class="languages header__item ripple-surface">
             <div class="languages__header">Languages</div>
             <div class="languages__item">
               <p contenteditable="true">English</p>
-              <input type="range" name="" id="" />
+              <input type="range" />
             </div>
             <div class="languages__item">
               <p contenteditable="true">Malayalam</p>
-              <input type="range" name="" id="" />
+              <input type="range" />
             </div>
             <div class="languages__item">
               <p contenteditable="true">Hindi</p>
-              <input type="range" name="" id="" />
+              <input type="range" />
             </div>
           </div>
         </div>
@@ -55,7 +59,7 @@
           <div class="experience main-section__item">
             <div class="main-section__header">Experience</div>
             <div class="experience__body">
-              <div class="experience__item">
+              <div class="experience__item ripple-surface">
                 <p class="experience__time">
                   <span contenteditable="true">Jun. 2023 - Present</span>
                   <span class="experience__tag">most recent</span>
@@ -87,7 +91,7 @@
                 </div>
               </div>
 
-              <div class="experience__item">
+              <div class="experience__item ripple-surface">
                 <p class="experience__time">
                   <span contenteditable="true">2017 - Present</span>
                 </p>
@@ -124,7 +128,7 @@
                 </div>
               </div>
 
-              <div class="experience__item">
+              <div class="experience__item ripple-surface">
                 <p class="experience__time">
                   <span contenteditable="true">Sep. 2021 - Jun. 2023</span>
                 </p>
@@ -161,7 +165,7 @@
               </div>
             </div>
           </div>
-          <div class="tools main-section__item">
+          <div class="tools main-section__item ripple-surface">
             <div class="main-section__header">Tools</div>
             <div class="tools__container">
               <div class="tool design">
@@ -180,7 +184,7 @@
                 <img src="./public/logoFramer.svg" alt="Illustrator" />
                 <img src="./public/logoWordpress.svg" alt="Wordpress" />
               </div>
-              <div class="tool artificial-intelligence">
+              <div class="tool artificial-intelligence ">
                 <p class="tool__header">artificial intelligence</p>
                 <img src="./public/logoChatGPT.svg" alt="ChatGPT" />
                 <img src="./public/logoCopilot.svg" alt="Copilot" />
@@ -194,7 +198,7 @@
           <div class="education bottom-section__item">
             <div class="main-section__header">Education</div>
             <div class="education__box">
-              <div class="education__item">
+              <div class="education__item ripple-surface">
                 <div>
                   <p class="education__header" contenteditable="true">2023</p>
                   <span class="heart"></span>
@@ -206,7 +210,7 @@
                 <p class="education__place" contenteditable="true">Coursera</p>
               </div>
 
-              <div class="education__item">
+              <div class="education__item ripple-surface">
                 <div>
                   <p class="education__header" contenteditable="true">
                     2017 - 2022
@@ -221,7 +225,7 @@
                 </p>
               </div>
 
-              <div class="education__item">
+              <div class="education__item ripple-surface">
                 <div>
                   <p class="education__header" contenteditable="true">2017</p>
                 </div>
@@ -234,7 +238,7 @@
             </div>
           </div>
           <div class="bottom__right-side">
-            <div class="interests bottom-section__item">
+            <div class="interests bottom-section__item ripple-surface">
               <div class="main-section__header">Interests</div>
               <div class="interests__box">
                 <div class="interests__item" contenteditable="true">
@@ -265,7 +269,7 @@
                 <div class="interests__item" contenteditable="true">games</div>
               </div>
             </div>
-            <div class="bottom-section__item contacts">
+            <div class="bottom-section__item contacts ripple-surface">
               <div class="main-section__header bottom-section__header">
                 Let´s chat! I´m ready to work on excinting projects
               </div>
@@ -278,39 +282,7 @@
       </div>
       <button id="download-btn">Скачать PDF</button>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script type="module" src="./js/main.js"></script>
-    <script>
-      let lastClickedElement = null;
 
-      document.addEventListener("click", function (event) {
-        let element = event.target.closest(".ripple-surface");
-
-        if (element) {
-          if (element === lastClickedElement) {
-            return;
-          }
-
-          lastClickedElement = element;
-
-          let rect = element.getBoundingClientRect();
-          let x = event.clientX - rect.left;
-          let y = event.clientY - rect.top;
-
-          let ripple = document.createElement("div");
-          ripple.classList.add("ripple-effect");
-          ripple.style.left = `${x}px`;
-          ripple.style.top = `${y}px`;
-
-          element.prepend(ripple);
-
-          ripple.addEventListener("animationend", function () {
-            ripple.remove();
-          });
-        }
-      });
-    </script>
   </body>
 </html>

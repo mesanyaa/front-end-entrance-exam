@@ -2,7 +2,6 @@ document.getElementById("download-btn").addEventListener("click", function () {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  // Выбор элемента резюме
   const resumeElement = document.getElementById('resume');
 
   html2canvas(resumeElement).then((canvas) => {
