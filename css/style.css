@@ -449,12 +449,80 @@ div[contenteditable="true"]:focus {
   outline: none;
 }
 
-@media (max-width: 680px) {
-  .container {
-    max-width: 500px;
-  }
-  .header-section {
+.languages-section {
+  display: none;
+  width: 300px;
+  margin: 0 auto;
+  height: 150px;
+  background: var(--grey-color);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 845px) {
+  .main-section {
     flex-direction: column;
+  }
+
+  .main-section__item {
+    width: 100%;
+  }
+
+  .tools__container {
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+  }
+
+  .tool {
+    width: 25%;
+  }
+
+  .tool__header {
+    left: 70px;
+  }
+
+  .artificial-intelligence > .tool__header {
+    left: 50px;
+  }
+  .bottom-section {
+    flex-direction: column;
+  }
+
+  .education {
+    width: 100%;
+  }
+
+  .bottom__right-side {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 664px) {
+  .tools__container {
+    flex-direction: column;
+  }
+  .tool {
+    width: 100%;
+  }
+}
+
+@media (max-width: 684px) {
+  .header-section {
+    height: 150px;
+  }
+  .header__item {
+    width: 150px;
+    height: 150px;
+  }
+  .languages {
+    display: none;
+  }
+
+  .languages-section {
+    display: block;
   }
 }
