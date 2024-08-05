@@ -3,7 +3,7 @@
   --dark-grey-color: #5c5c5c;
   --green-color: #28d979;
   --light-green-color: #ddf163;
-  --dark-green-color: #7e7312;
+  --dark-green-color: rgba(126, 115, 18, 0.4);
   --hashtag-green-color: #149063;
   --yellow-color: #f6ed1e;
 }
@@ -66,7 +66,7 @@ html {
 }
 
 .photo {
-  background-color: var(--dark-grey-color);
+  width: 100%;
 }
 
 .occupation {
@@ -206,12 +206,16 @@ input[type="range"]::-ms-fill-upper {
   justify-content: space-between;
 }
 
+.experience__item:nth-child(1) {
+  background: var(--green-color);
+  color: #fff;
+}
+
 .experience__tag {
   padding: 2px 6px;
   border-radius: 60px;
   background: var(--dark-green-color);
   color: var(--light-green-color);
-  display: none;
 }
 
 .experience__details {
@@ -242,6 +246,44 @@ input[type="range"]::-ms-fill-upper {
 
 .education {
   width: 405px;
+}
+
+.tools__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.tool {
+  width: 100%;
+  height: fit-content;
+  background: #fff;
+  border-radius: 12px;
+  padding: 26px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  position: relative;
+}
+
+.tool__header {
+  position: absolute;
+  top: -10px;
+  left: 55px;
+  color: #fff;
+  background: #000;
+  padding: 2px 6px;
+  border-radius: 60px;
+  font-size: 9px;
+}
+
+.artificial-intelligence > .tool__header {
+  left: 30px;
+}
+
+.tool img {
+  width: 35px;
+  height: 35px;
 }
 
 .bottom__right-side {
@@ -296,6 +338,16 @@ input[type="range"]::-ms-fill-upper {
   font-size: 12px;
 }
 
+.education__item:nth-child(1) {
+  background: var(--green-color);
+  color: #fff
+}
+
+.education__item:nth-child(1) > .education__hastags, 
+.education__item:nth-child(1) > .education__hastags > span {
+  color: #fff;
+}
+
 .education__header {
   margin: 0 0 10px 0;
   font-weight: 600;
@@ -303,7 +355,6 @@ input[type="range"]::-ms-fill-upper {
 
 .heart {
   position: relative;
-  display: none;
 }
 
 .heart:before,
@@ -338,6 +389,36 @@ input[type="range"]::-ms-fill-upper {
 
 .interests {
   margin: 0 0 20px 0;
+}
+
+.ripple-surface {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-surface .ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--ripple-color);
+
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+
+  animation: ripple 1s;
+  opacity: 0;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
 }
 
 p[contenteditable="true"]:focus {

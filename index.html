@@ -12,7 +12,13 @@
       <div class="container">
         <div class="header-section">
           <div class="header__left-side">
-            <div class="photo header__item"></div>
+            <div class="header__item">
+              <img
+                class="photo"
+                src="./public/profileImg.png"
+                alt="profile_image"
+              />
+            </div>
             <div class="occupation header__item">
               <p class="gretting">Hello 👋🏻 I’m</p>
               <div class="editable-occupation">
@@ -84,7 +90,6 @@
               <div class="experience__item">
                 <p class="experience__time">
                   <span contenteditable="true">2017 - Present</span>
-                  <span class="experience__tag">most recent</span>
                 </p>
                 <div class="experience-item__wrapper">
                   <div class="experience__left">
@@ -122,7 +127,6 @@
               <div class="experience__item">
                 <p class="experience__time">
                   <span contenteditable="true">Sep. 2021 - Jun. 2023</span>
-                  <span class="experience__tag">most recent</span>
                 </p>
                 <div class="experience-item__wrapper">
                   <div class="experience__left">
@@ -159,6 +163,30 @@
           </div>
           <div class="tools main-section__item">
             <div class="main-section__header">Tools</div>
+            <div class="tools__container">
+              <div class="tool design">
+                <p class="tool__header">design</p>
+                <img src="./public/logoFigma.svg" alt="Figma" />
+                <img src="./public/logoPhotoshop.svg" alt="Photoshop" />
+                <img src="./public/logoIllustrator.svg" alt="Illustrator" />
+                <img src="./public/logoPremiere.svg" alt="Premiere" />
+                <img src="./public/logoNotion.svg" alt="Notion" />
+                <img src="./public/logoMeet.svg" alt="Meet" />
+              </div>
+              <div class="tool no-code">
+                <p class="tool__header">no-code</p>
+                <img src="./public/logoZapìer.svg" alt="Zapìer" />
+                <img src="./public/logoWebflow.svg" alt="Webflow" />
+                <img src="./public/logoFramer.svg" alt="Illustrator" />
+                <img src="./public/logoWordpress.svg" alt="Wordpress" />
+              </div>
+              <div class="tool artificial-intelligence">
+                <p class="tool__header">artificial intelligence</p>
+                <img src="./public/logoChatGPT.svg" alt="ChatGPT" />
+                <img src="./public/logoCopilot.svg" alt="Copilot" />
+                <img src="./public/logoMidjourney.svg" alt="logoMidjourney" />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -183,7 +211,6 @@
                   <p class="education__header" contenteditable="true">
                     2017 - 2022
                   </p>
-                  <span class="heart"></span>
                 </div>
                 <p class="education__hastags" contenteditable="true">
                   <span> Law</span><br />#law #legalStudies #contracts
@@ -197,7 +224,6 @@
               <div class="education__item">
                 <div>
                   <p class="education__header" contenteditable="true">2017</p>
-                  <span class="heart"></span>
                 </div>
                 <p class="education__hastags" contenteditable="true">
                   <span> Graphic design</span><br />#branding #web #illustration
@@ -252,5 +278,35 @@
       </div>
     </div>
     <script type="module" src="./js/main.js"></script>
+    <script>
+      let lastClickedElement = null;
+
+      document.addEventListener("click", function (event) {
+        let element = event.target.closest(".ripple-surface");
+
+        if (element) {
+          if (element === lastClickedElement) {
+            return;
+          }
+
+          lastClickedElement = element;
+
+          let rect = element.getBoundingClientRect();
+          let x = event.clientX - rect.left;
+          let y = event.clientY - rect.top;
+
+          let ripple = document.createElement("div");
+          ripple.classList.add("ripple-effect");
+          ripple.style.left = `${x}px`;
+          ripple.style.top = `${y}px`;
+
+          element.prepend(ripple);
+
+          ripple.addEventListener("animationend", function () {
+            ripple.remove();
+          });
+        }
+      });
+    </script>
   </body>
 </html>
