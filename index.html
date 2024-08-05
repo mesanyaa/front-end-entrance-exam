@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/wave.js" defer></script>
+    <script type="module" src="./js/optimization.js"></script>
   </head>
   <body>
     <div id="app" class="wrapper">
@@ -26,12 +27,17 @@
             <div class="occupation header__item ripple-surface">
               <p class="gretting">Hello 👋🏻 I’m</p>
               <div class="editable-occupation">
-                <p contenteditable="true" class="editable-occupation__name">
+                <p
+                  contenteditable="true"
+                  class="editable-occupation__name"
+                  id="name"
+                >
                   Karthik SR
                 </p>
                 <p
                   contenteditable="true"
                   class="editable-occupation__occupation"
+                  id="occupation"
                 >
                   UX/UI Designer
                 </p>
@@ -41,14 +47,14 @@
           <div class="languages header__item ripple-surface">
             <div class="languages__header">Languages</div>
             <div class="languages__item">
-              <p contenteditable="true">English</p>
+              <p contenteditable="true" id="english">English</p>
               <input type="range" />
             </div>
             <div class="languages__item">
-              <p contenteditable="true">Malayalam</p>
+              <p contenteditable="true" id="malayalam">Malayalam</p>
               <input type="range" />
             </div>
-            <div class="languages__item">
+            <div class="languages__item" id="hindi">
               <p contenteditable="true">Hindi</p>
               <input type="range" />
             </div>
@@ -61,29 +67,29 @@
             <div class="experience__body">
               <div class="experience__item ripple-surface">
                 <p class="experience__time">
-                  <span contenteditable="true">Jun. 2023 - Present</span>
+                  <span contenteditable="true" id="time_1_1">Jun. 2023 - Present</span>
                   <span class="experience__tag">most recent</span>
                 </p>
                 <div class="experience-item__wrapper">
                   <div class="experience__left">
-                    <p class="experience__position" contenteditable="true">
+                    <p class="experience__position" contenteditable="true" id="time_1_2">
                       Marketing Manager
                     </p>
-                    <p class="experience__details" contenteditable="true">
+                    <p class="experience__details" contenteditable="true" id="time_1_3">
                       Pankayam | Full-time
                     </p>
                   </div>
                   <div class="experience__right">
                     <p>
                       •
-                      <span contenteditable="true"
+                      <span contenteditable="true" id="experience_1_1"
                         >Strategy development and planning of campaigns that
                         promote the business and generate genuine traffic SEO
                         Content</span
                       >
                       <br />
                       •
-                      <span contenteditable="true"
+                      <span contenteditable="true" id="experience_1_2"
                         >Creation for Blogs, Website, Social media</span
                       >
                     </p>
@@ -93,32 +99,32 @@
 
               <div class="experience__item ripple-surface">
                 <p class="experience__time">
-                  <span contenteditable="true">2017 - Present</span>
+                  <span contenteditable="true" id="time_2_1">2017 - Present</span>
                 </p>
                 <div class="experience-item__wrapper">
                   <div class="experience__left">
-                    <p class="experience__position" contenteditable="true">
+                    <p class="experience__position" contenteditable="true" id="time_2_2">
                       Graphic / Web designer
                     </p>
-                    <p class="experience__details" contenteditable="true">
+                    <p class="experience__details" contenteditable="true" id="time_2_3">
                       Freelance
                     </p>
                   </div>
                   <div class="experience__right">
                     <p>
                       •
-                      <span contenteditable="true"
+                      <span contenteditable="true" id="experience_2_1"
                         >Development of internal projects from scratch, product
                         design of brands
                       </span>
                       <br />
                       •
-                      <span contenteditable="true"
+                      <span contenteditable="true" id="experience_2_2"
                         >Landing page, webapps and hybrid apps</span
                       >
                       <br />
                       •
-                      <span contenteditable="true"
+                      <span contenteditable="true" id="experience_2_3"
                         >Coordinating with outside agencies, art services, web
                         designer, marketing, printers, and colleagues as
                         necessary.</span
@@ -130,32 +136,32 @@
 
               <div class="experience__item ripple-surface">
                 <p class="experience__time">
-                  <span contenteditable="true">Sep. 2021 - Jun. 2023</span>
+                  <span contenteditable="true" id="time_3_1">Sep. 2021 - Jun. 2023</span>
                 </p>
                 <div class="experience-item__wrapper">
                   <div class="experience__left">
-                    <p class="experience__position" contenteditable="true">
+                    <p class="experience__position" contenteditable="true" id="time_3_2">
                       Legal Assistant
                     </p>
-                    <p class="experience__details" contenteditable="true">
+                    <p class="experience__details" contenteditable="true" id="time_3_3">
                       Law Firm | Intern
                     </p>
                   </div>
                   <div class="experience__right">
                     <p>
                       •
-                      <span contenteditable="true"
+                      <span contenteditable="true" id="experience_3_1"
                         >Provide administrative support to lawyer and enhance
                         office effectiveness
                       </span>
                       <br />
                       •
-                      <span contenteditable="true"
+                      <span contenteditable="true" id="experience_3_2"
                         >Handle communication with clients, witnesses etc.</span
                       >
                       <br />
                       •
-                      <span contenteditable="true"
+                      <span contenteditable="true" id="experience_3_3"
                         >Repare case briefs and summarize depositions,
                         interrogatories and testimony</span
                       >
@@ -184,7 +190,7 @@
                 <img src="./public/logoFramer.svg" alt="Illustrator" />
                 <img src="./public/logoWordpress.svg" alt="Wordpress" />
               </div>
-              <div class="tool artificial-intelligence ">
+              <div class="tool artificial-intelligence">
                 <p class="tool__header">artificial intelligence</p>
                 <img src="./public/logoChatGPT.svg" alt="ChatGPT" />
                 <img src="./public/logoCopilot.svg" alt="Copilot" />
@@ -200,40 +206,40 @@
             <div class="education__box">
               <div class="education__item ripple-surface">
                 <div>
-                  <p class="education__header" contenteditable="true">2023</p>
+                  <p class="education__header" contenteditable="true" id="education_header_1">2023</p>
                   <span class="heart"></span>
                 </div>
-                <p class="education__hastags" contenteditable="true">
+                <p class="education__hastags" contenteditable="true" id="education_hashtags_1">
                   <span> UI/UX</span><br />#UX #UI #research #DesignSystem #Ui
                   #wireframing #figma #Ux
                 </p>
-                <p class="education__place" contenteditable="true">Coursera</p>
+                <p class="education__place" contenteditable="true" id="education_place_1">Coursera</p>
               </div>
 
               <div class="education__item ripple-surface">
                 <div>
-                  <p class="education__header" contenteditable="true">
+                  <p class="education__header" contenteditable="true" id="education_header_2">
                     2017 - 2022
                   </p>
                 </div>
-                <p class="education__hastags" contenteditable="true">
+                <p class="education__hastags" contenteditable="true" id="education_hashtags_2">
                   <span> Law</span><br />#law #legalStudies #contracts
                   #internationalLaws
                 </p>
-                <p class="education__place" contenteditable="true">
+                <p class="education__place" contenteditable="true"  id="education_place_2">
                   University of Kerala
                 </p>
               </div>
 
               <div class="education__item ripple-surface">
                 <div>
-                  <p class="education__header" contenteditable="true">2017</p>
+                  <p class="education__header" contenteditable="true" id="education_header_3">2017</p>
                 </div>
-                <p class="education__hastags" contenteditable="true">
+                <p class="education__hastags" contenteditable="true" id="education_hashtags_3">
                   <span> Graphic design</span><br />#branding #web #illustration
                   #adobe
                 </p>
-                <p class="education__place" contenteditable="true">Coursera</p>
+                <p class="education__place" contenteditable="true" id="education_place_3">Coursera</p>
               </div>
             </div>
           </div>
@@ -241,39 +247,39 @@
             <div class="interests bottom-section__item ripple-surface">
               <div class="main-section__header">Interests</div>
               <div class="interests__box">
-                <div class="interests__item" contenteditable="true">
+                <div class="interests__item" contenteditable="true" id="iterest_1">
                   branding
                 </div>
-                <div class="interests__item" contenteditable="true">design</div>
-                <div class="interests__item" contenteditable="true">
+                <div class="interests__item" contenteditable="true" id="iterest_2">design</div>
+                <div class="interests__item" contenteditable="true" id="iterest_3">
                   photography
                 </div>
-                <div class="interests__item" contenteditable="true">
+                <div class="interests__item" contenteditable="true" id="iterest_4">
                   artificial intelligence
                 </div>
-                <div class="interests__item" contenteditable="true">
+                <div class="interests__item" contenteditable="true" id="iterest_5">
                   illustration
                 </div>
-                <div class="interests__item" contenteditable="true">
+                <div class="interests__item" contenteditable="true" id="iterest_6">
                   typography
                 </div>
-                <div class="interests__item" contenteditable="true">
+                <div class="interests__item" contenteditable="true" id="iterest_7">
                   social networks
                 </div>
-                <div class="interests__item" contenteditable="true">
+                <div class="interests__item" contenteditable="true" id="iterest_8">
                   research
                 </div>
-                <div class="interests__item" contenteditable="true">
+                <div class="interests__item" contenteditable="true" id="iterest_9">
                   dron pilot
                 </div>
-                <div class="interests__item" contenteditable="true">games</div>
+                <div class="interests__item" contenteditable="true" id="iterest_10">games</div>
               </div>
             </div>
             <div class="bottom-section__item contacts ripple-surface">
               <div class="main-section__header bottom-section__header">
                 Let´s chat! I´m ready to work on excinting projects
               </div>
-              <p contenteditable="true" class="contact">
+              <p contenteditable="true" class="contact" id="contacts">
                 srkarthik.designscape@gmail.com
               </p>
             </div>
@@ -283,6 +289,5 @@
       <button id="download-btn">Скачать PDF</button>
     </div>
     <script type="module" src="./js/main.js"></script>
-
   </body>
 </html>
