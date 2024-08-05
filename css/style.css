@@ -39,6 +39,23 @@ html {
   font-weight: regular;
 }
 
+.wrapper {
+  position: relative;
+}
+
+#download-btn {
+  position: fixed;
+  top: 50px;
+  left: 200px;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 60px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
 .container {
   max-width: 1140px;
   margin: 0 auto;
@@ -340,10 +357,10 @@ input[type="range"]::-ms-fill-upper {
 
 .education__item:nth-child(1) {
   background: var(--green-color);
-  color: #fff
+  color: #fff;
 }
 
-.education__item:nth-child(1) > .education__hastags, 
+.education__item:nth-child(1) > .education__hastags,
 .education__item:nth-child(1) > .education__hastags > span {
   color: #fff;
 }

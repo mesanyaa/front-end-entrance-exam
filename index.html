@@ -8,8 +8,8 @@
     <title>Resume Creator</title>
   </head>
   <body>
-    <div id="app">
-      <div class="container">
+    <div id="app" class="wrapper">
+      <div class="container" id="resume">
         <div class="header-section">
           <div class="header__left-side">
             <div class="header__item">
@@ -276,7 +276,11 @@
           </div>
         </div>
       </div>
+      <button id="download-btn">Скачать PDF</button>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script type="module" src="./js/main.js"></script>
     <script>
       let lastClickedElement = null;
